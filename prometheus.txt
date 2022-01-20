@@ -1,0 +1,145 @@
+hp@hp:~$ cd /
+hp@hp:/$ ls
+bin    dev   lib    libx32      mnt   root  snap  tmp     usr
+boot   etc   lib32  lost+found  opt   run   srv   users   var
+cdrom  home  lib64  media       proc  sbin  sys   users2
+hp@hp:/$ etc
+
+Command 'etc' not found, did you mean:
+
+  command 'dtc' from snap device-tree-compiler (1.6.1)
+  command 'etr' from deb extremetuxracer (0.7.5-1build2)
+  command 'tc' from deb iproute2 (5.5.0-1ubuntu1)
+  command 'rtc' from deb nvram-wakeup (1.1-4build1)
+  command 'etcd' from deb etcd-server (3.2.26+dfsg-6)
+  command 'ecc' from deb ecere-dev (0.44.15-1build3)
+  command 'atc' from deb bsdgames (2.17-28build1)
+  command 'etm' from deb etm (3.2.30-1)
+  command 'htc' from deb httptunnel (3.3+dfsg-4)
+  command 'dtc' from deb device-tree-compiler (1.5.1-1)
+  command 'etw' from deb etw (3.6+svn162-5)
+
+See 'snap info <snapname>' for additional versions.
+
+hp@hp:/$ cd etc
+hp@hp:/etc$ ls
+acpi                           gtk-2.0              pm
+adduser.conf                   gtk-3.0              pnm2ppa.conf
+alsa                           hdparm.conf          polkit-1
+alternatives                   host.conf            popularity-contest.conf
+anacrontab                     hostid               ppp
+ansible                        hostname             profile
+apg.conf                       hosts                profile.d
+apm                            hosts.allow          prometheus
+apparmor                       hosts.deny           protocols
+apparmor.d                     hp                   pulse
+apport                         ifplugd              python3
+appstream.conf                 init                 python3.8
+apt                            init.d               rc0.d
+avahi                          initramfs-tools      rc1.d
+bash.bashrc                    inputrc              rc2.d
+bash_completion                insserv.conf.d       rc3.d
+bash_completion.d              iproute2             rc4.d
+bindresvport.blacklist         issue                rc5.d
+binfmt.d                       issue.net            rc6.d
+bluetooth                      kernel               rcS.d
+brlapi.key                     kernel-img.conf      resolv.conf
+brltty                         kerneloops.conf      rmt
+brltty.conf                    kubernetes           rpc
+ca-certificates                ldap                 rsyslog.conf
+ca-certificates.conf           ld.so.cache          rsyslog.d
+ca-certificates.conf.dpkg-old  ld.so.conf           rygel.conf
+calendar                       ld.so.conf.d         sane.d
+chatscripts                    legal                security
+console-setup                  libao.conf           selinux
+containerd                     libaudit.conf        sensors3.conf
+cracklib                       libblockdev          sensors.d
+cron.d                         libnl-3              services
+cron.daily                     libpaper.d           sgml
+cron.hourly                    libreoffice          shadow
+cron.monthly                   locale.alias         shadow-
+crontab                        locale.gen           shells
+cron.weekly                    localtime            skel
+cups                           logcheck             snmp
+cupshelpers                    login.defs           speech-dispatcher
+daemon.json                    logrotate.conf       ssh
+dbus-1                         logrotate.d          ssl
+dconf                          lsb-release          subgid
+debconf.conf                   ltrace.conf          subgid-
+debian_version                 machine-id           subuid
+default                        magic                subuid-
+deluser.conf                   magic.mime           sudoers
+depmod.d                       mailcap              sudoers.d
+dhcp                           mailcap.order        sysctl.conf
+dictionaries-common            manpath.config       sysctl.d
+dnsmasq.d                      mime.types           systemd
+docker                         mke2fs.conf          terminfo
+dpkg                           modprobe.d           thermald
+e2scrub.conf                   modules              thunderbird
+emacs                          modules-load.d       timezone
+environment                    mtab                 tmpfiles.d
+environment.d                  mtools.conf          ubuntu-advantage
+ethertypes                     mysql                ucf.conf
+firefox                        nanorc               udev
+fonts                          netplan              udisks2
+fprintd.conf                   network              ufw
+fstab                          networkd-dispatcher  update-manager
+fuse.conf                      NetworkManager       update-motd.d
+fwupd                          networks             update-notifier
+gai.conf                       newt                 UPower
+gamemode.ini                   nginx                usb_modeswitch.conf
+gdb                            nsswitch.conf        usb_modeswitch.d
+gdm3                           openvpn              vdpau_wrapper.cfg
+geoclue                        opt                  vim
+ghostscript                    os-release           vtrgb
+glvnd                          PackageKit           vulkan
+gnome                          pam.conf             wgetrc
+groff                          pam.d                wpa_supplicant
+group                          papersize            X11
+group-                         passwd               xattr.conf
+grub.d                         passwd-              xdg
+gshadow                        pcmcia               xml
+gshadow-                       perl                 zsh_command_not_found
+gss                            pki
+hp@hp:/etc$ nano daemon.json
+hp@hp:/etc$ sudo nano daemon.json
+[sudo] password for hp: 
+hp@hp:/etc$ cd ..
+hp@hp:/$ ls
+bin    dev   lib    libx32      mnt   root  snap  tmp     usr
+boot   etc   lib32  lost+found  opt   run   srv   users   var
+cdrom  home  lib64  media       proc  sbin  sys   users2
+hp@hp:/$ cd tmp
+hp@hp:/tmp$ nano prometheus.yml
+hp@hp:/tmp$ cd ..
+hp@hp:/$ ls
+bin    dev   lib    libx32      mnt   root  snap  tmp     usr
+boot   etc   lib32  lost+found  opt   run   srv   users   var
+cdrom  home  lib64  media       proc  sbin  sys   users2
+hp@hp:/$ sudo chmod 666 /var/run/docker.sock
+hp@hp:/$ docker service create --replicas 1 --name my-prometheus     --mount type=bind,source=/tmp/prometheus.yml,destination=/etc/prometheus/prometheus.yml     --publish published=9090,target=9090,protocol=tcp     prom/prometheus
+Error response from daemon: rpc error: code = InvalidArgument desc = port '9090' is already in use by service 'my-prometheus' (rme847im3upbl0382kbjoxpld) as an ingress port
+hp@hp:/$ docker service create --replicas 1 --name my-prometheus     --mount type=bind,source=/tmp/prometheus.yml,destination=/etc/prometheus/prometheus.yml     --publish published=9000,target=9000,protocol=tcp     prom/prometheus
+Error response from daemon: rpc error: code = AlreadyExists desc = name conflicts with an existing object: service my-prometheus already exists
+hp@hp:/$ docker service create --replicas 1 --name myy-prometheuss     --mount type=bind,source=/tmp/prometheus.yml,destination=/etc/prometheus/prometheus.yml     --publish published=9000,target=9000,protocol=tcp     prom/prometheus
+crkae7ipgo16mrywchqnb6nzn
+overall progress: 1 out of 1 tasks 
+1/1: running   
+verify: Service converged 
+hp@hp:/$ docker service create \
+> >   --replicas 10 \
+> >   --name ping_service \
+> >   alpine ping docker.com
+bash: --replicas: Permission denied
+hp@hp:/$ sudo docker service create >   --replicas 10 >   --name ping_service >   alpine ping docker.com
+bash: --replicas: Permission denied
+hp@hp:/$ sudo chmod 666 /var/run/docker.sock
+hp@hp:/$ sudo docker service create >   --replicas 10 >   --name ping_service >   alpine ping docker.com
+bash: --replicas: Permission denied
+hp@hp:/$ docker service ls
+ID             NAME              MODE         REPLICAS   IMAGE                    PORTS
+rme847im3upb   my-prometheus     replicated   1/1        prom/prometheus:latest   *:9090->9090/tcp
+crkae7ipgo16   myy-prometheuss   replicated   1/1        prom/prometheus:latest   *:9000->9000/tcp
+h80qlwovcjb9   ping_service      replicated   10/10      alpine:latest            
+hp@hp:/$ 
+
