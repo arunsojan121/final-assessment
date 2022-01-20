@@ -1,0 +1,277 @@
+hp@hp:~/Desktop/getting-started-master$ cd app
+hp@hp:~/Desktop/getting-started-master/app$ docker build -t getting-started .
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.24/build?buildargs=%7B%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&rm=1&shmsize=0&t=getting-started&target=&ulimits=null&version=1: dial unix /var/run/docker.sock: connect: permission denied
+hp@hp:~/Desktop/getting-started-master/app$ sudo chmod 666 /var/run/docker.sock[sudo] password for hp: hp@hp:~/Desktop/getting-started-master/app$ docker build -t getting-started .
+Sending build context to Docker daemon  65.22MB
+Step 1/6 : FROM node:12-alpine
+ ---> 106bb94759ad
+Step 2/6 : RUN apk add --no-cache python2 g++ make
+ ---> Using cache
+ ---> f1762a410eed
+Step 3/6 : WORKDIR /app
+ ---> Using cache
+ ---> 838783fa74b5
+Step 4/6 : COPY . .
+ ---> e60e52727903
+Step 5/6 : RUN yarn install --production
+ ---> Running in e3cbf690640f
+yarn install v1.22.17
+[1/4] Resolving packages...
+warning Resolution field "ansi-regex@5.0.1" is incompatible with requested version "ansi-regex@^2.0.0"
+warning Resolution field "ansi-regex@5.0.1" is incompatible with requested version "ansi-regex@^3.0.0"
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+Done in 19.69s.
+Removing intermediate container e3cbf690640f
+ ---> eae84d68df65
+Step 6/6 : CMD ["node", "src/index.js"]
+ ---> Running in 2c308ed24527
+Removing intermediate container 2c308ed24527
+ ---> 9ff363105e04
+Successfully built 9ff363105e04
+Successfully tagged getting-started:latest
+hp@hp:~/Desktop/getting-started-master/app$ docker run -dp 3000:3000 getting-started
+0341dfa462a30fdf23f358836468471ff24888eb4a31a7b7be6f85a021d1d163
+hp@hp:~/Desktop/getting-started-master/app$ docker ps
+CONTAINER ID   IMAGE                 COMMAND                  CREATED             STATUS             PORTS                                                                                  NAMES
+0341dfa462a3   getting-started       "docker-entrypoint.s…"   15 minutes ago      Up 15 minutes      0.0.0.0:3000->3000/tcp, :::3000->3000/tcp                                              awesome_morse
+322595d2e74a   alpine:latest         "ping docker.com"        About an hour ago   Up About an hour                                                                                          ping_service.4.m4tzqfahncjkj047qokxpcp0e
+8c607ed79564   alpine:latest         "ping docker.com"        About an hour ago   Up About an hour                                                                                          ping_service.10.gnt1ov5b0213dp90v3v51q141
+6b161466a908   alpine:latest         "ping docker.com"        About an hour ago   Up About an hour                                                                                          ping_service.1.h4t04cgxsepzoxa8lfcxhiyr6
+185e5c263445   alpine:latest         "ping docker.com"        About an hour ago   Up About an hour                                                                                          ping_service.5.nvab2vxfmupbp0ztcy4i1p6vu
+31b214a634bf   alpine:latest         "ping docker.com"        About an hour ago   Up About an hour                                                                                          ping_service.7.hz484mk8dtleyx9uya14zoq3x
+f8aa8a970ec8   alpine:latest         "ping docker.com"        About an hour ago   Up About an hour                                                                                          ping_service.9.xvv6dq95ckyof75fq6hsweat7
+0cf48e1171b1   alpine:latest         "ping docker.com"        About an hour ago   Up About an hour                                                                                          ping_service.3.xfx347udgas3qs123z7t9trre
+161de8b0df59   alpine:latest         "ping docker.com"        About an hour ago   Up About an hour                                                                                          ping_service.6.ntkkaqed5bilpltmye8cyk5i3
+c5e0ed6d8576   alpine:latest         "ping docker.com"        About an hour ago   Up About an hour                                                                                          ping_service.2.l7gsa76pcjqjq7mf724qposn3
+a3384764baed   alpine:latest         "ping docker.com"        About an hour ago   Up About an hour                                                                                          ping_service.8.nd2sti3ka3l2f8zourcw0nzk0
+51d769c854aa   portainer/portainer   "/portainer"             3 weeks ago         Up 2 hours         0.0.0.0:8000->8000/tcp, :::8000->8000/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp   portainer
+hp@hp:~/Desktop/getting-started-master/app$ docker stop 0341dfa462a3
+0341dfa462a3
+hp@hp:~/Desktop/getting-started-master/app$ docker rm 0341dfa462a3
+0341dfa462a3
+hp@hp:~/Desktop/getting-started-master/app$ docker run -dp 3000:3000 getting-started
+76486575e20f5afaee3578215cfb8dcfb2f6987b6af22b030c954816c45842ae
+hp@hp:~/Desktop/getting-started-master/app$ p@hp:~/Desktop/getting-started-master/app$ docker push arunsojan121/getting-started
+Using default tag: latest
+The push refers to repository [docker.io/arunsojan121/getting-started]
+015f22186333: Layer already exists 
+99de321a23fd: Layer already exists 
+3f1e9811c12c: Layer already exists 
+0bcea0ad493f: Layer already exists 
+c99dbbb91c1e: Layer already exists 
+743fabfe0b03: Layer already exists 
+529f2cda666c: Layer already exists 
+1a058d5342cc: Layer already exists 
+latest: digest: sha256:0d7fd38e3c0b26db6bcf5bff5ce42caef806e798b1cf87bd14c77cba6ffc7424 size: 2000
+hp@hp:~/Desktop/getting-started-master/app$ docker run -d ubuntu bash -c "shuf -i 1-10000 -n 1 -o /data.txt && tail -f /dev/null"
+5cfccc1557fefe8fb63cfe89af3317db922173ba0c11f55b8b4c7a555743a9a5
+hp@hp:~/Desktop/getting-started-master/app$ docker ps
+CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS          PORTS                                                                                  NAMES
+5cfccc1557fe   ubuntu                "bash -c 'shuf -i 1-…"   33 seconds ago   Up 29 seconds                                                                                          naughty_hopper
+76486575e20f   getting-started       "docker-entrypoint.s…"   17 minutes ago   Up 17 minutes   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp                                              musing_goodall
+322595d2e74a   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.4.m4tzqfahncjkj047qokxpcp0e
+8c607ed79564   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.10.gnt1ov5b0213dp90v3v51q141
+6b161466a908   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.1.h4t04cgxsepzoxa8lfcxhiyr6
+185e5c263445   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.5.nvab2vxfmupbp0ztcy4i1p6vu
+31b214a634bf   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.7.hz484mk8dtleyx9uya14zoq3x
+f8aa8a970ec8   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.9.xvv6dq95ckyof75fq6hsweat7
+0cf48e1171b1   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.3.xfx347udgas3qs123z7t9trre
+161de8b0df59   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.6.ntkkaqed5bilpltmye8cyk5i3
+c5e0ed6d8576   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.2.l7gsa76pcjqjq7mf724qposn3
+a3384764baed   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.8.nd2sti3ka3l2f8zourcw0nzk0
+51d769c854aa   portainer/portainer   "/portainer"             3 weeks ago      Up 2 hours      0.0.0.0:8000->8000/tcp, :::8000->8000/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp   portainer
+hp@hp:~/Desktop/getting-started-master/app$ docker exec 5cfccc1557fe cat /data.txt
+656
+hp@hp:~/Desktop/getting-started-master/app$ docker exec 5cfccc1557fe cat /data.txt
+656
+hp@hp:~/Desktop/getting-started-master/app$ docker volume create todo-db
+todo-db
+hp@hp:~/Desktop/getting-started-master/app$ docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started
+cc7538142afced988803567ea563956f82843444c817e981eb1b9fbfec25bf51
+docker: Error response from daemon: driver failed programming external connectivity on endpoint suspicious_jennings (6bffdf0cb64157c799bfc97f31047c745bd5ed9102ea3c7bc32e4489ea562094): Bind for 0.0.0.0:3000 failed: port is already allocated.
+hp@hp:~/Desktop/getting-started-master/app$ docker volume inspect todo-db
+[
+    {
+        "CreatedAt": "2021-12-28T14:25:58+05:30",
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/todo-db/_data",
+        "Name": "todo-db",
+        "Options": {},
+        "Scope": "local"
+    }
+]
+hp@hp:~/Desktop/getting-started-master/app$ docker run -dp 3003:3000 -w /app -v "$(pwd):/app" node:12-alpine sh -c "yarn install && yarn run dev"
+8a9f68f40203bf1b2d8c22c95568ed01fa1f20176d28e035c3bf956e58c9010a
+hp@hp:~/Desktop/getting-started-master/app$ docker ps
+CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS          PORTS                                                                                  NAMES
+8a9f68f40203   node:12-alpine        "docker-entrypoint.s…"   17 seconds ago   Up 14 seconds   0.0.0.0:3003->3000/tcp, :::3003->3000/tcp                                              condescending_leavitt
+5cfccc1557fe   ubuntu                "bash -c 'shuf -i 1-…"   4 minutes ago    Up 4 minutes                                                                                           naughty_hopper
+76486575e20f   getting-started       "docker-entrypoint.s…"   21 minutes ago   Up 21 minutes   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp                                              musing_goodall
+322595d2e74a   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.4.m4tzqfahncjkj047qokxpcp0e
+8c607ed79564   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.10.gnt1ov5b0213dp90v3v51q141
+6b161466a908   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.1.h4t04cgxsepzoxa8lfcxhiyr6
+185e5c263445   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.5.nvab2vxfmupbp0ztcy4i1p6vu
+31b214a634bf   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.7.hz484mk8dtleyx9uya14zoq3x
+f8aa8a970ec8   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.9.xvv6dq95ckyof75fq6hsweat7
+0cf48e1171b1   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.3.xfx347udgas3qs123z7t9trre
+161de8b0df59   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.6.ntkkaqed5bilpltmye8cyk5i3
+c5e0ed6d8576   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.2.l7gsa76pcjqjq7mf724qposn3
+a3384764baed   alpine:latest         "ping docker.com"        2 hours ago      Up 2 hours                                                                                             ping_service.8.nd2sti3ka3l2f8zourcw0nzk0
+51d769c854aa   portainer/portainer   "/portainer"             3 weeks ago      Up 2 hours      0.0.0.0:8000->8000/tcp, :::8000->8000/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp   portainer
+hp@hp:~/Desktop/getting-started-master/app$ docker logs -f 8a9f68f40203
+yarn install v1.22.17
+[1/4] Resolving packages...
+warning Resolution field "ansi-regex@5.0.1" is incompatible with requested version "ansi-regex@^2.0.0"
+warning Resolution field "ansi-regex@5.0.1" is incompatible with requested version "ansi-regex@^3.0.0"
+success Already up-to-date.
+Done in 0.97s.
+yarn run v1.22.17
+$ nodemon src/index.js
+[nodemon] 2.0.13
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node src/index.js`
+Using sqlite database at /etc/todos/todo.db
+Listening on port 3000
+^C
+hp@hp:~/Desktop/getting-started-master/app$ docker run -dp 3000:3000 -w /app -v "$(pwd):/app" node:12-alpine sh -c "yarn install && yarn run dev"
+c0017beffcbd582655a497a5897bba387d400cf002f24ba538a72b8240b1286c
+hp@hp:~/Desktop/getting-started-master/app$ sudo docker run -d --network todo-app --network-alias mysql -v todo-mysqdata:/var/lib/mysql ` -e MYSQL_ROOT_PASSWORD=secret ` -e MYSQL_DATABASE=todos mysql:5.7
+-e: command not found
+[sudo] password for hp: 
+bb398c3ec11250bfaec85f89054ebaaafb057054c8274e56e4a289d07a78cf33
+
+
+docker network create todo-app
+ab899becf2f2af18a97af0164b522e69b7dbe43bee66f0453e2df65b0b03a627
+hp@hp:~/getting-started/app$  sudo docker run -d --network todo-app --network-alias mysql -v todo-mysqdata:/var/lib/mysql ` -e MYSQL_ROOT_PASSWORD=secret ` -e MYSQL_DATABASE=todos mysql:5.7
+e96c4afed6984eb2b1f707c6aa1b3b678c10bd2bfa97098e2c480801af549bd2
+hp@hp@h:~/getting-started/app$ sudo docker ps
+CONTAINER ID   IMAGE                 COMMAND        CREATED      STATUS             PORTS                                                                                  NAMES
+51d769c854aa   portainer/portainer   "/portainer"   9 days ago   Up About an hour   0.0.0.0:8000->8000/tcp, :::8000->8000/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp   portainer
+
+hp@hp~/getting-started/app$ sudo docker exec -it  51d769c854a mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.7.36 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| todos              |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql>
+
+hp@hp:~/getting-started$ cd app
+hp@hp~/getting-started/app$ sudo docker run -it --network todo-app nicolaka/netshoot
+Unable to find image 'nicolaka/netshoot:latest' locally
+latest: Pulling from nicolaka/netshoot
+97518928ae5f: Already exists
+09706d35e05d: Pull complete
+4996ecc64030: Pull complete
+9a11de879aaa: Pull complete
+44f8e61e69d1: Pull complete
+dcf41a6beeb6: Pull complete
+d4d3a508f57b: Pull complete
+ca86b0e825d1: Pull complete
+7eeba344c2b1: Pull complete
+c52dc2d61c4a: Pull complete
+d04aa1a002c2: Pull complete
+7070cabd1e04: Pull complete
+Digest: sha256:d6942ec583d8e2818f5a5d7a71c303e861a70a11396ad9e9d25b355842e97589
+Status: Downloaded newer image for nicolaka/netshoot:latest
+                    dP            dP                           dP
+                    88            88                           88
+88d888b. .d8888b. d8888P .d8888b. 88d888b. .d8888b. .d8888b. d8888P
+88'  `88 88ooood8   88   Y8ooooo. 88'  `88 88'  `88 88'  `88   88
+88    88 88.  ...   88         88 88    88 88.  .88 88.  .88   88
+dP    dP `88888P'   dP   `88888P' dP    dP `88888P' `88888P'   dP
+
+Welcome to Netshoot! (github.com/nicolaka/netshoot)
+
+
+
+ 68e8f491e7d7  ~  dig mysql
+
+; <<>> DiG 9.16.22 <<>> mysql
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 18611
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;mysql.                         IN      A
+
+;; ANSWER SECTION:
+mysql.                  600     IN      A       172.18.0.2
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.11#53(127.0.0.11)
+;; WHEN: Thu Jan 20 03:19:29 UTC 2022
+;; MSG SIZE  rcvd: 44
+ hp@hp:~/Desktop/getting-started-master/app$sudo docker run -dp 3001:3000 -w /app -v "$(pwd):/app" --network todo-app -e MYSQL_HOST=mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=secret -e MYSQL_DB=todos node:12-alpine sh -c "yarn install && yarn run dev"
+8ad0f830d7e191e9c0da5fedb9e2eee945de4baac039a1395706373cc5579ba8
+ hp@hp~/Desktop/getting-started-master/app$sudo docker exec -it f0276d810b42 mysql -p todos
+ Enter password:
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+mysql> select * from todo_items;
+Empty set (0.00 sec)
+
+mysql> exit
+
+
+
+
+
+
+docker compose.yml
+
+
+version: "3.7"
+
+services:
+  app:
+    image: node:12-alpine
+    command: sh -c "yarn install && yarn run dev"
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_DB: todos
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - todo-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: todos  
+volumes:
+  todo-mysql-data:
