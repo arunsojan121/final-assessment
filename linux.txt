@@ -1,0 +1,680 @@
+hp@hp:~$ pwd
+/home/hp
+hp@hp:~$ ls
+Abcimpex            myinfo.txt
+apple.sh            mytem
+args.sh             my.txt
+array.sh            --name
+Arun                newfile
+arun_playbook       new.txt
+arunrole            nn
+arunrole.yml        odd.sh
+Assignment          Pictures
+bash_alias          pro
+demo.sh             prometheus-2.31.0.linux-amd64.tar.gz
+Desktop             prometheus-2.32.1.linux-amd64
+--detach            prometheus-2.32.1.linux-amd64.tar.gz
+devops.txt          prometheus.txt
+Documents           Public
+Downloads           python.txt
+for.sh              reading.sh
+function.sh         rev
+Hashmum             roles
+helloscript.sh      self.sh
+Hobsdir             shellscript.txt
+ifelse.sh           shellscrpt.txt
+input.sh            snap
+install-tomcat      start-tomcat
+kk.txt              student.yml
+kubectl-convert     temp
+kubectl.sha256      Templates
+languages           trainee.txt
+linux_tweet_app     vardemo1.sh
+linux.txt           vardemo.sh
+multargumentfun.sh  var.sh
+Music               Videos
+mycmd.sh            while.sh
+mycommands.sh       zing
+mycontent.txt       Zing
+myfilewithvars.sh   Zink
+hp@hp:~$ cd temp
+hp@hp:~/temp$ pwd
+/home/hp/temp
+hp@hp:~/temp$ cd ..
+hp@hp:~$ mkdir -p OuterFolder/InnerFolder
+hp@hp:~$ ls
+Abcimpex        kubectl-convert                       prometheus.txt
+apple.sh        kubectl.sha256                        Public
+args.sh         languages                             python.txt
+array.sh        linux_tweet_app                       reading.sh
+Arun            linux.txt                             rev
+arun_playbook   multargumentfun.sh                    roles
+arunrole        Music                                 self.sh
+arunrole.yml    mycmd.sh                              shellscript.txt
+Assignment      mycommands.sh                         shellscrpt.txt
+bash_alias      mycontent.txt                         snap
+demo.sh         myfilewithvars.sh                     start-tomcat
+Desktop         myinfo.txt                            student.yml
+--detach        mytem                                 temp
+devops.txt      my.txt                                Templates
+Documents       --name                                trainee.txt
+Downloads       newfile                               vardemo1.sh
+for.sh          new.txt                               vardemo.sh
+function.sh     nn                                    var.sh
+Hashmum         odd.sh                                Videos
+helloscript.sh  OuterFolder                           while.sh
+Hobsdir         Pictures                              zing
+ifelse.sh       pro                                   Zing
+input.sh        prometheus-2.31.0.linux-amd64.tar.gz  Zink
+install-tomcat  prometheus-2.32.1.linux-amd64
+kk.txt          prometheus-2.32.1.linux-amd64.tar.gz
+hp@hp:~$ cd OuterFolder
+hp@hp:~/OuterFolder$ ls
+InnerFolder
+hp@hp:~/OuterFolder$ cd InnerFolder
+hp@hp:~/OuterFolder/InnerFolder$ ls
+hp@hp:~/OuterFolder/InnerFolder$ cd
+hp@hp:~$ cd OuterFolder/InnerFolder
+hp@hp:~/OuterFolder/InnerFolder$ cd
+hp@hp:~$ cd OuterFolder
+hp@hp:~/OuterFolder$ cd
+hp@hp:~$ ls > outputLS.txt
+hp@hp:~$ cat outputLS.txt
+Abcimpex
+apple.sh
+args.sh
+array.sh
+Arun
+arun_playbook
+arunrole
+arunrole.yml
+Assignment
+bash_alias
+demo.sh
+Desktop
+--detach
+devops.txt
+Documents
+Downloads
+for.sh
+function.sh
+Hashmum
+helloscript.sh
+Hobsdir
+ifelse.sh
+input.sh
+install-tomcat
+kk.txt
+kubectl-convert
+kubectl.sha256
+languages
+linux_tweet_app
+linux.txt
+multargumentfun.sh
+Music
+mycmd.sh
+mycommands.sh
+mycontent.txt
+myfilewithvars.sh
+myinfo.txt
+mytem
+my.txt
+--name
+newfile
+new.txt
+nn
+odd.sh
+OuterFolder
+outputLS.txt
+Pictures
+pro
+prometheus-2.31.0.linux-amd64.tar.gz
+prometheus-2.32.1.linux-amd64
+prometheus-2.32.1.linux-amd64.tar.gz
+prometheus.txt
+Public
+python.txt
+reading.sh
+rev
+roles
+self.sh
+shellscript.txt
+shellscrpt.txt
+snap
+start-tomcat
+student.yml
+temp
+Templates
+trainee.txt
+vardemo1.sh
+vardemo.sh
+var.sh
+Videos
+while.sh
+zing
+Zing
+Zink
+hp@hp:~$ mkdir Seb
+hp@hp:~$ cd Seb
+hp@hp:~/Seb$ cd /
+hp@hp:/$ pwd
+/
+hp@hp:/$ ls
+bin    dev   lib    libx32      mnt   root  snap  tmp     usr
+boot   etc   lib32  lost+found  opt   run   srv   users   var
+cdrom  home  lib64  media       proc  sbin  sys   users2
+hp@hp:/$ cd usr
+hp@hp:/usr$ ls
+bin    include  lib32  libexec  local  share
+games  lib      lib64  libx32   sbin   src
+hp@hp:/usr$ cd ..
+hp@hp:/$ cd 
+hp@hp:~$ cd Zink
+hp@hp:~/Zink$ mkdir -p parent/child
+hp@hp:~/Zink$ ls
+parent
+hp@hp:~/Zink$ cd parent
+hp@hp:~/Zink/parent$ ls
+child
+hp@hp:~/Zink/parent$ cd
+hp@hp:~$ ls > outputfile.txt
+hp@hp:~$ cat outputfile.txt
+Abcimpex
+apple.sh
+args.sh
+array.sh
+Arun
+arun_playbook
+arunrole
+arunrole.yml
+Assignment
+bash_alias
+demo.sh
+Desktop
+--detach
+devops.txt
+Documents
+Downloads
+first.sh
+for.sh
+fruit.sh
+funct1.sh
+function.sh
+Hashmum
+helloscript.sh
+Hobsdir
+ifelse.sh
+input.sh
+install-tomcat
+kk.txt
+kubectl-convert
+kubectl.sha256
+languages
+linux_tweet_app
+linux.txt
+multargumentfun.sh
+Music
+mycmd.sh
+mycommands.sh
+mycontent.txt
+myfilewithvars.sh
+myinfo.txt
+mytem
+my.txt
+--name
+newfile
+new.txt
+nn
+oddeven.sh
+odd.sh
+OuterFolder
+outputfile.txt
+outputLS.txt
+Pictures
+pro
+prometheus-2.31.0.linux-amd64.tar.gz
+prometheus-2.32.1.linux-amd64
+prometheus-2.32.1.linux-amd64.tar.gz
+prometheus.txt
+Public
+python.txt
+reading.sh
+rev
+roles
+Seb
+self.sh
+shellscript.txt
+shellscrpt.txt
+snap
+start-tomcat
+student.yml
+temp
+Templates
+trainee.txt
+vardemo1.sh
+vardemo.sh
+var.sh
+Videos
+while.sh
+zing
+Zing
+Zink
+hp@hp:~$ cd Zink
+hp@hp:~/Zink$ echo "haaai" > neww.txt
+hp@hp:~/Zink$ ls
+neww.txt  parent
+hp@hp:~/Zink$ cat neww.txt
+haaai
+hp@hp:~/Zink$ mv parent /home/hp
+hp@hp:~/Zink$ ls
+neww.txt
+hp@hp:~/Zink$ cd 
+hp@hp:~$ ls
+Abcimpex        kk.txt              prometheus-2.31.0.linux-amd64.tar.gz
+apple.sh        kubectl-convert     prometheus-2.32.1.linux-amd64
+args.sh         kubectl.sha256      prometheus-2.32.1.linux-amd64.tar.gz
+array.sh        languages           prometheus.txt
+Arun            linux_tweet_app     Public
+arun_playbook   linux.txt           python.txt
+arunrole        multargumentfun.sh  reading.sh
+arunrole.yml    Music               rev
+Assignment      mycmd.sh            roles
+bash_alias      mycommands.sh       Seb
+demo.sh         mycontent.txt       self.sh
+Desktop         myfilewithvars.sh   shellscript.txt
+--detach        myinfo.txt          shellscrpt.txt
+devops.txt      mytem               snap
+Documents       my.txt              start-tomcat
+Downloads       --name              student.yml
+first.sh        newfile             temp
+for.sh          new.txt             Templates
+fruit.sh        nn                  trainee.txt
+funct1.sh       oddeven.sh          vardemo1.sh
+function.sh     odd.sh              vardemo.sh
+Hashmum         OuterFolder         var.sh
+helloscript.sh  outputfile.txt      Videos
+Hobsdir         outputLS.txt        while.sh
+ifelse.sh       parent              zing
+input.sh        Pictures            Zing
+install-tomcat  pro                 Zink
+hp@hp:~$ mv parent newfolder
+hp@hp:~$ ls
+Abcimpex        kk.txt              prometheus-2.31.0.linux-amd64.tar.gz
+apple.sh        kubectl-convert     prometheus-2.32.1.linux-amd64
+args.sh         kubectl.sha256      prometheus-2.32.1.linux-amd64.tar.gz
+array.sh        languages           prometheus.txt
+Arun            linux_tweet_app     Public
+arun_playbook   linux.txt           python.txt
+arunrole        multargumentfun.sh  reading.sh
+arunrole.yml    Music               rev
+Assignment      mycmd.sh            roles
+bash_alias      mycommands.sh       Seb
+demo.sh         mycontent.txt       self.sh
+Desktop         myfilewithvars.sh   shellscript.txt
+--detach        myinfo.txt          shellscrpt.txt
+devops.txt      mytem               snap
+Documents       my.txt              start-tomcat
+Downloads       --name              student.yml
+first.sh        newfile             temp
+for.sh          newfolder           Templates
+fruit.sh        new.txt             trainee.txt
+funct1.sh       nn                  vardemo1.sh
+function.sh     oddeven.sh          vardemo.sh
+Hashmum         odd.sh              var.sh
+helloscript.sh  OuterFolder         Videos
+Hobsdir         outputfile.txt      while.sh
+ifelse.sh       outputLS.txt        zing
+input.sh        Pictures            Zing
+install-tomcat  pro                 Zink
+hp@hp:~$ whoami
+hp
+hp@hp:~$ man man
+hp@hp:~$  cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+systemd-timesync:x:102:104:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:103:106::/nonexistent:/usr/sbin/nologin
+syslog:x:104:110::/home/syslog:/usr/sbin/nologin
+_apt:x:105:65534::/nonexistent:/usr/sbin/nologin
+tss:x:106:111:TPM software stack,,,:/var/lib/tpm:/bin/false
+uuidd:x:107:114::/run/uuidd:/usr/sbin/nologin
+tcpdump:x:108:115::/nonexistent:/usr/sbin/nologin
+avahi-autoipd:x:109:116:Avahi autoip daemon,,,:/var/lib/avahi-autoipd:/usr/sbin/nologin
+usbmux:x:110:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
+rtkit:x:111:117:RealtimeKit,,,:/proc:/usr/sbin/nologin
+dnsmasq:x:112:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+cups-pk-helper:x:113:120:user for cups-pk-helper service,,,:/home/cups-pk-helper:/usr/sbin/nologin
+speech-dispatcher:x:114:29:Speech Dispatcher,,,:/run/speech-dispatcher:/bin/false
+avahi:x:115:121:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/usr/sbin/nologin
+kernoops:x:116:65534:Kernel Oops Tracking Daemon,,,:/:/usr/sbin/nologin
+saned:x:117:123::/var/lib/saned:/usr/sbin/nologin
+nm-openvpn:x:118:124:NetworkManager OpenVPN,,,:/var/lib/openvpn/chroot:/usr/sbin/nologin
+hplip:x:119:7:HPLIP system user,,,:/run/hplip:/bin/false
+whoopsie:x:120:125::/nonexistent:/bin/false
+colord:x:121:126:colord colour management daemon,,,:/var/lib/colord:/usr/sbin/nologin
+geoclue:x:122:127::/var/lib/geoclue:/usr/sbin/nologin
+pulse:x:123:128:PulseAudio daemon,,,:/var/run/pulse:/usr/sbin/nologin
+gnome-initial-setup:x:124:65534::/run/gnome-initial-setup/:/bin/false
+gdm:x:125:130:Gnome Display Manager:/var/lib/gdm3:/bin/false
+sssd:x:126:131:SSSD system user,,,:/var/lib/sss:/usr/sbin/nologin
+hp:x:1000:1000:hp,,,:/home/hp:/bin/bash
+systemd-coredump:x:999:999:systemd Core Dumper:/:/usr/sbin/nologin
+sojan:x:1001:1002::/home/sojan:/bin/sh
+testuser:x:1002:1004::/users/testdirectory:/bin/sh
+user1:x:1003:1005::/users/testdirectory:/bin/sh
+user2:x:1004:1006::/users2/testdirectory:/bin/sh
+sshd:x:127:65534::/run/sshd:/usr/sbin/nologin
+abdi:x:1007:1013::/home/abdi:/bin/sh
+abdp:x:1008:1014::/home/abdp:/bin/sh
+prometheus:x:998:996::/home/prometheus:/sbin/nologin
+prome:x:1009:1009::/home/prome:/bin/false
+node_exporter:x:1010:1010::/home/node_exporter:/bin/false
+hp@hp:~$ sudo useradd ppxx
+[sudo] password for hp: 
+hp@hp:~$ pwd
+/home/hp
+hp@hp:~$ cd /
+hp@hp:/$ pwd
+/
+hp@hp:/$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,hp
+tty:x:5:syslog
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:hp
+floppy:x:25:
+tape:x:26:
+sudo:x:27:hp
+audio:x:29:pulse
+dip:x:30:hp
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:hp
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+systemd-resolve:x:103:
+systemd-timesync:x:104:
+crontab:x:105:
+messagebus:x:106:
+input:x:107:
+kvm:x:108:
+render:x:109:
+syslog:x:110:
+tss:x:111:
+bluetooth:x:112:
+ssl-cert:x:113:
+uuidd:x:114:
+tcpdump:x:115:
+avahi-autoipd:x:116:
+rtkit:x:117:
+ssh:x:118:
+netdev:x:119:
+lpadmin:x:120:hp
+avahi:x:121:
+scanner:x:122:saned
+saned:x:123:
+nm-openvpn:x:124:
+whoopsie:x:125:
+colord:x:126:
+geoclue:x:127:
+pulse:x:128:
+pulse-access:x:129:
+gdm:x:130:
+sssd:x:131:
+lxd:x:132:hp
+hp:x:1000:
+sambashare:x:133:hp
+systemd-coredump:x:999:
+devops:x:1001:
+sojan:x:1002:
+training:x:1003:
+docker:x:998:
+testuser:x:1004:
+user1:x:1005:
+user2:x:1006:
+devops1:x:1011:
+devops2:x:1012:
+microk8s:x:997:hp
+abdi:x:1013:
+abdp:x:1014:
+reels:x:1015:
+reele:x:1016:
+prometheus:x:996:
+prome:x:1009:
+node_exporter:x:1010:
+ppxx:x:1017:
+hp@hp:/$ cd ..
+hp@hp:/$ cd 
+hp@hp:~$ sudo groupadd trees
+hp@hp:~$ ls
+Abcimpex        kk.txt              prometheus-2.31.0.linux-amd64.tar.gz
+apple.sh        kubectl-convert     prometheus-2.32.1.linux-amd64
+args.sh         kubectl.sha256      prometheus-2.32.1.linux-amd64.tar.gz
+array.sh        languages           prometheus.txt
+Arun            linux_tweet_app     Public
+arun_playbook   linux.txt           python.txt
+arunrole        multargumentfun.sh  reading.sh
+arunrole.yml    Music               rev
+Assignment      mycmd.sh            roles
+bash_alias      mycommands.sh       Seb
+demo.sh         mycontent.txt       self.sh
+Desktop         myfilewithvars.sh   shellscript.txt
+--detach        myinfo.txt          shellscrpt.txt
+devops.txt      mytem               snap
+Documents       my.txt              start-tomcat
+Downloads       --name              student.yml
+first.sh        newfile             temp
+for.sh          newfolder           Templates
+fruit.sh        new.txt             trainee.txt
+funct1.sh       nn                  vardemo1.sh
+function.sh     oddeven.sh          vardemo.sh
+Hashmum         odd.sh              var.sh
+helloscript.sh  OuterFolder         Videos
+Hobsdir         outputfile.txt      while.sh
+ifelse.sh       outputLS.txt        zing
+input.sh        Pictures            Zing
+install-tomcat  pro                 Zink
+hp@hp:~$ ls -il
+total 198120
+1451367 drwxrwxr-x  2 hp   hp       4096 Dec 17 12:25 Abcimpex
+1086107 -rwxrwxr--  1 hp   hp        268 Jan 20 12:11 apple.sh
+1048858 -rwxrw-r--  1 hp   hp        195 Dec 20 12:44 args.sh
+1086124 -rwxrwxr--  1 hp   hp        117 Dec 13 12:33 array.sh
+1705663 drwxrwxr-x  2 hp   hp       4096 Dec  1 10:50 Arun
+1316159 drwxrwxr-x  4 hp   hp       4096 Dec 16 14:30 arun_playbook
+1316086 drwxrwxr-x 10 hp   hp       4096 Dec 16 10:21 arunrole
+1054900 -rw-rw-r--  1 hp   hp         86 Dec 16 10:35 arunrole.yml
+2366067 drwxrwxr-x  3 hp   hp       4096 Jan  8 15:01 Assignment
+1061231 -rw-rw-r--  1 hp   hp         56 Dec 10 17:31 bash_alias
+1086106 -rwxrwxr--  1 hp   hp        112 Dec 13 12:08 demo.sh
+1052333 drwxr-xr-x 12 hp   hp       4096 Jan 20 14:20 Desktop
+1056007 -rw-rw-r--  1 hp   hp          0 Dec 21 11:02 --detach
+1069256 -rw-rw-r--  1 hp   hp       4566 Jan  8 11:42 devops.txt
+1052338 drwxr-xr-x  2 hp   hp       4096 Dec  1 03:44 Documents
+1052335 drwxr-xr-x  4 hp   hp       4096 Jan 18 18:17 Downloads
+1059060 -rwxrwxr--  1 hp   hp        131 Jan 20 12:09 first.sh
+1063829 -rwxrwxr--  1 hp   hp         88 Dec 13 12:05 for.sh
+1057548 -rwxrwxr--  1 hp   hp        277 Jan 20 12:23 fruit.sh
+1054150 -rwxrwxr--  1 hp   hp        119 Jan 20 12:28 funct1.sh
+1060745 -rwxrwxr-x  1 hp   hp        145 Dec 13 17:22 function.sh
+2238161 drwxrwxr-x  3 hp   hp       4096 Jan  7 17:32 Hashmum
+1057668 -rwxrwxr-x  1 hp   hp        383 Dec 13 10:34 helloscript.sh
+1705717 drwxrwxr-x  2 hp   hp       4096 Dec  2 08:56 Hobsdir
+1070401 -rwxrw-r--  1 hp   hp        107 Dec 20 12:05 ifelse.sh
+1048816 -rwxrwxr-x  1 hp   hp        110 Dec 20 13:00 input.sh
+1314454 drwxrwxr-x 10 hp   hp       4096 Dec 16 10:50 install-tomcat
+1059538 -rw-rw-r--  1 hp   hp       8447 Jan  7 19:13 kk.txt
+1060152 -rw-rw-r--  1 hp   hp   54333616 Jan 10 10:04 kubectl-convert
+1060155 -rw-rw-r--  1 hp   hp         64 Jan 10 10:06 kubectl.sha256
+1180109 drwxrwxr-x  2 hp   hp       4096 Dec  7 15:50 languages
+1451394 drwxrwxr-x  3 hp   hp       4096 Dec 21 15:20 linux_tweet_app
+1058440 -rw-rw-r--  1 hp   hp      16024 Jan  7 19:12 linux.txt
+1085873 -rwxrwxr-x  1 hp   hp        101 Dec 13 17:26 multargumentfun.sh
+1052339 drwxr-xr-x  2 hp   hp       4096 Dec  1 03:44 Music
+1076711 -rwxrwxr-x  1 hp   hp        114 Dec 10 11:11 mycmd.sh
+1085046 -rwxrwxr-x  1 hp   hp         70 Dec 10 12:03 mycommands.sh
+1060077 -rw-rw-r--  1 hp   hp       2380 Jan  8 17:55 mycontent.txt
+1085595 -rwxrwxr-x  1 hp   hp        122 Dec 10 12:46 myfilewithvars.sh
+1071000 -rw-rw-r--  1 hp   hp        965 Jan  8 14:35 myinfo.txt
+1705689 drwxrwxr-x  3 hp   hp       4096 Dec  1 14:39 mytem
+1058653 -rw-rw-r--  1 hp   hp         16 Jan  1 15:23 my.txt
+1056121 -rw-rw-r--  1 hp   hp          0 Dec 21 11:02 --name
+1053576 -rw-rw-r--  1 hp   hp       9210 Jan 10 18:02 newfile
+2642285 drwxrwxr-x  3 hp   hp       4096 Jan 20 14:24 newfolder
+1067643 -rw-rw-r--  1 hp   hp      17892 Jan  7 18:03 new.txt
+1705087 drwxrwxr-x  2 hp   hp       4096 Jan  7 17:35 nn
+1053105 -rwxrwxrwx  1 hp   hp        137 Jan 20 12:31 oddeven.sh
+1071368 -rwxrwxr-x  1 hp   hp        120 Dec 13 13:47 odd.sh
+2629793 drwxrwxr-x  3 hp   hp       4096 Jan 20 12:02 OuterFolder
+1063799 -rw-rw-r--  1 hp   hp        860 Jan 20 14:24 outputfile.txt
+1063544 -rw-rw-r--  1 hp   hp        802 Jan 20 12:05 outputLS.txt
+1052340 drwxr-xr-x  4 hp   hp       4096 Jan 20 14:21 Pictures
+1189139 drwxrwxr-x  3 hp   hp       4096 Dec 10 10:35 pro
+1073384 -rw-rw-r--  1 hp   hp   73091480 Dec  8 11:34 prometheus-2.31.0.linux-amd64.tar.gz
+2500101 drwxr-xr-x  5 3434 3434     4096 Jan 10 17:36 prometheus-2.32.1.linux-amd64
+1052897 -rw-r--r--  1 root root 75073989 Dec 18 03:55 prometheus-2.32.1.linux-amd64.tar.gz
+1058050 -rw-rw-r--  1 hp   hp       9210 Jan 10 17:37 prometheus.txt
+1052337 drwxr-xr-x  2 hp   hp       4096 Dec  1 03:44 Public
+1069239 -rw-rw-r--  1 hp   hp        965 Jan  8 11:39 python.txt
+1084128 -rwxrwxr-x  1 hp   hp         79 Dec 13 13:34 reading.sh
+2238241 drwxrwxr-x  2 hp   hp       4096 Jan  7 17:22 rev
+1316062 drwxrwxr-x  3 hp   hp       4096 Dec 15 17:14 roles
+2642236 drwxrwxr-x  2 hp   hp       4096 Jan 20 14:22 Seb
+1059886 -rwxrwxr-x  1 hp   hp          7 Dec 10 10:58 self.sh
+1067374 -rw-rw-r--  1 hp   hp       2377 Jan  8 14:32 shellscript.txt
+1060046 -rw-rw-r--  1 hp   hp       2380 Jan  8 14:38 shellscrpt.txt
+1316192 drwx------  6 hp   hp       4096 Jan  7 11:11 snap
+1316123 drwxrwxr-x 10 hp   hp       4096 Dec 16 12:16 start-tomcat
+1057425 -rw-rw-r--  1 hp   hp         86 Dec 15 17:10 student.yml
+1064298 drwxrwxr-x  4 hp   hp       4096 Dec  1 17:16 temp
+1052336 drwxr-xr-x  2 hp   hp       4096 Dec  1 03:44 Templates
+1705718 -rw-rw-r--  1 hp   hp        551 Dec  2 08:53 trainee.txt
+1086101 -rwxrwxr-x  1 hp   hp         82 Dec 13 12:54 vardemo1.sh
+1060741 -rwxrwxr-x  1 hp   hp        125 Dec 13 12:51 vardemo.sh
+1070447 -rwxrwxr-x  1 hp   hp         91 Dec 13 12:59 var.sh
+1052341 drwxr-xr-x  2 hp   hp       4096 Dec  1 03:44 Videos
+1086120 -rwxrwxr--  1 hp   hp        101 Dec 13 12:18 while.sh
+2238155 drwxrwxr-x  2 hp   hp       4096 Jan  7 16:58 zing
+1451809 drwxrwxr-x  2 hp   hp       4096 Dec 28 16:51 Zing
+2238162 drwxrwxr-x  2 hp   hp       4096 Jan 20 14:26 Zink
+hp@hp:~$ pwd
+/home/hp
+hp@hp:~$ ls
+Abcimpex        kk.txt              prometheus-2.31.0.linux-amd64.tar.gz
+apple.sh        kubectl-convert     prometheus-2.32.1.linux-amd64
+args.sh         kubectl.sha256      prometheus-2.32.1.linux-amd64.tar.gz
+array.sh        languages           prometheus.txt
+Arun            linux_tweet_app     Public
+arun_playbook   linux.txt           python.txt
+arunrole        multargumentfun.sh  reading.sh
+arunrole.yml    Music               rev
+Assignment      mycmd.sh            roles
+bash_alias      mycommands.sh       Seb
+demo.sh         mycontent.txt       self.sh
+Desktop         myfilewithvars.sh   shellscript.txt
+--detach        myinfo.txt          shellscrpt.txt
+devops.txt      mytem               snap
+Documents       my.txt              start-tomcat
+Downloads       --name              student.yml
+first.sh        newfile             temp
+for.sh          newfolder           Templates
+fruit.sh        new.txt             trainee.txt
+funct1.sh       nn                  vardemo1.sh
+function.sh     oddeven.sh          vardemo.sh
+Hashmum         odd.sh              var.sh
+helloscript.sh  OuterFolder         Videos
+Hobsdir         outputfile.txt      while.sh
+ifelse.sh       outputLS.txt        zing
+input.sh        Pictures            Zing
+install-tomcat  pro                 Zink
+hp@hp:~$ 
+hp@hp:~$ 
+hp@hp:~$ sudo adduser tom
+Adding user `tom' ...
+Adding new group `tom' (1007) ...
+Adding new user `tom' (1005) with group `tom' ...
+The home directory `/home/tom' already exists.  Not copying from `/etc/skel'.
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for tom
+Enter the new value, or press ENTER for the default
+	Full Name []: 
+	Room Number []: 
+	Work Phone []: 
+	Home Phone []: 
+	Other []: 
+Is the information correct? [Y/n] y
+hp@hp:~$ su - tom
+Password: 
+tom@hp:~$ pwd
+/home/tom
+tom@hp:~$ mkdir pulsar
+tom@hp:~$ cd pulsar
+tom@hp:~/pulsar$ touch ded.txt
+tom@hp:~/pulsar$ nano ded.txt
+tom@hp:~/pulsar$ cat ded.txt
+name=geetha
+loc=bnglr
+no=909
+tom@hp:~/pulsar$ mv ded.txt /home/tom
+tom@hp:~/pulsar$ ls
+tom@hp:~/pulsar$ cd ..
+tom@hp:~$ ls
+axf.txt  ded.txt  Hashinfor.txt  initial  initialHashmum  pulsar
+tom@hp:~$ cp ded.txt /home/tom/pulsar
+tom@hp:~$ ls
+axf.txt  ded.txt  Hashinfor.txt  initial  initialHashmum  pulsar
+tom@hp:~$ cd pulsar
+tom@hp:~/pulsar$ ls
+ded.txt
+tom@hp:~/pulsar$ cd ..
+tom@hp:~$ exit
+logout
+hp@hp:~$ 
+
+

@@ -1,0 +1,74 @@
+hp@hp:~$ nano
+hp@hp:~$ chmod 774 first.sh
+hp@hp:~$ cat first.sh
+#!/bin/bash
+echo The script title is $0
+echo The first argument is $1
+echo The second argument is $2
+echo The third argument is $3
+hp@hp:~$ ./first.sh 29 10 34
+The script title is ./first.sh
+The first argument is 29
+The second argument is 10
+The third argument is 34
+hp@hp:~$ nano
+
+#!/bin/bash
+echo "enter a fruit name"
+read fruits
+if [ $fruit = apple ]
+        then echo " i like apple "
+elif  [ $fruit = mango ]
+        then echo " i like  mango "
+elif [ $fruit = orange ]
+        then echo " i love orange "
+        else echo " i love all $fruits "
+
+fi
+
+hp@hp:~$ nano fruit.sh
+hp@hp:~$ chmod 774 fruit.sh
+hp@hp:~$ ./fruit.sh
+enter a fruit name
+mango
+ i love all mango 
+hp@hp:~$ ./fruit.sh
+enter a fruit name
+apple
+ i love all apple 
+hp@hp:~$ nano
+hp@hp:~$ chmod 774 funct1.sh
+hp@hp:~$ cat funct1.sh
+#!/bin/bash
+funct1(){
+        echo "function with arguments"
+        echo "$1"
+        echo "hello, $2"
+}
+funct1 $! $2
+hp@hp:~$ ./funct1.sh 20 29 77
+function with arguments
+29
+hello, 
+hp@hp:~$ nano
+hp@hp:~$ chmod 777 oddeven.sh
+hp@hp:~$ ls -il oddeven.sh
+1053105 -rwxrwxrwx 1 hp hp 137 Jan 20 12:31 oddeven.sh
+hp@hp:~$ cat oddeven.sh
+#!/bin/bash
+echo enter a number :
+read number
+if [ $((number % 2)) -eq 0 ]
+        then echo even number
+        else echo odd number
+fi
+hp@hp:~$ ./oddeven.sh
+enter a number :
+4
+even number
+hp@hp:~$ ./oddeven.sh
+enter a number :
+3
+odd number
+
+
