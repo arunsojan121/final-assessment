@@ -1,0 +1,84 @@
+hp@hp:~$ python3
+Python 3.8.10 (default, Nov 26 2021, 20:14:08) 
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> a=5
+>>> a+5
+10
+>>> a+=5
+>>> a
+10
+>>> 20/3
+6.666666666666667
+>>> 7-3
+4
+>>> 7*8
+56
+>>> for i in range(0,10):
+... print(i)
+  File "<stdin>", line 2
+    print(i)
+    ^
+IndentationError: expected an indented block
+>>> for i in range(0,10):
+...     print(i)
+... 
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+>>> name="revi"
+>>> loc="kerala"
+>>> no=9
+
+SyntaxError: invalid syntax
+>>> print("name is"+name+"loc:"+No:"+str(no))
+  File "<stdin>", line 1
+    print("name is"+name+"loc:"+No:"+str(no))
+                                  ^
+SyntaxError: invalid syntax
+>>> print("name is"+name+"loc:"+str(no))
+name isreviloc:9
+>>> print("name is"+name+ "loc:"+ str(no))
+name isreviloc:9
+>>> 
+>>
+>>> print("name is "+name+ "location is"+ loc + str(no))
+name is revilocation iskerala9
+>>> name =input("enter your name")
+enter your name revi
+>>> print(name)
+ revi
+>>> fruits =["apple","orange","banana","grapes"]
+>>> print(fruits[2])
+banana
+>>> for name in fruits:
+...     print(name)
+... 
+apple
+orange
+banana
+grapes
+>>> 
+>>> class student:
+...     def setstudent(self,id,name,course):
+...             self.id=id
+...             self.name=name
+...             self.course=course
+...     def getstudent(self):
+...             print(self.id, " ", self.name, " ", self.course)
+...
+>>> std = student()
+>>> std.setstudent(153,"revi","Java")
+>>> std.getstudent()
+153   revi   Java
+>>> std.setstudent(103,"malu","C")
+>>> std.getstudent()
+103  malu   C
+
